@@ -29,22 +29,12 @@ for (var i = 0; i < questions.length; i++) {
         if (!isOpen) {
             icons.style.transform = "rotate(180deg)";
             answer.style.display = "block";
-            // answer.style.transform = "transition .5s";
         }
     });
 }
 
-
-
 const travelimgA=["img/travel0.jpg","img/travel1.jpg","img/travel2.jpg", "img/travel3.jpg","img/travel4.jpg","img/travel5.jpg","img/travel6.jpg", "img/travel7.jpg", "img/travel8.jpg"];
 const textA=["다양한 여행지","다양한 볼거리","다양한 경험"];
-
-
-window.onload=function(){
-    
-}
-    
-
 
 $(function(){
     $(".navbar_menu li").on("click", function(){
@@ -64,21 +54,6 @@ $(function(){
         "backgroundSize": "100% 100%"});
     }
 
-    
-    // $(".faq .box .question").on("click", function() {
-    //     // 현재 클릭한 질문의 답변 상자를 토글링합니다.
-    //     $(this).next(".answer").slideToggle();
-    
-    //     // 클릭한 질문의 아이콘을 회전시킵니다.
-    //     $(this).find("i").toggleClass("rotate");
-        
-    //     // 현재 클릭한 질문을 제외한 다른 질문의 답변 상자를 닫습니다.
-    //     $(".faq .box .question").not(this).next(".answer").slideUp();
-        
-    //     // 다른 질문의 아이콘을 초기화합니다.
-    //     $(".faq .box .question").not(this).find("i").removeClass("rotate");
-    // });
-    
 })
 
 
