@@ -1,0 +1,353 @@
+* {
+    padding: 0; margin: 0; 
+    list-style: none;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* 
+font-family: 'SejonghospitalBold';
+font-family: 'JalnanGothic'; 
+font-family: 'NPSfontBold';
+*/
+
+@font-face {
+    font-family: 'SejonghospitalBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/SejonghospitalBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JalnanGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NPSfontBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+/* 세션 시작 */
+.sectionAll{
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100vh; 
+    background-color: antiquewhite;
+}
+.navbar{
+    width: 100%; height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    background-color: brown;
+    font-family: 'SejonghospitalBold';
+
+}
+.navbar_logo {
+    font-size: 24px;
+}
+.navbar_menu{
+    display: flex;
+    padding-left: 0;
+    color: white;
+}
+.navbar_menu li {
+    border: 0px solid yellow;
+    padding: 8px 40px;
+    font-size: 18px;
+    cursor: pointer;  
+}
+.navbar_menu li:hover{
+    font-size: 20px;
+    background-color: burlywood;
+    border-radius: 10px;
+}
+.navbar_icons{
+    display: flex;
+    padding-left: 0;
+    color: white;
+}
+.navbar_icons li {
+    padding: 8px 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.navbar_toogleBtn{
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    display: none;
+}
+.jbFixed {
+    position: fixed;
+    top: 0px;
+}
+
+
+.sec0{
+    position: relative; top: 0; left: 0;
+    background-image: url(../img/travel.jpg);
+    background-size: cover; /* 배경 이미지를 화면에 맞게 자동으로 조정합니다 */
+    background-position: center; /* 배경 이미지를 가운데로 정렬합니다 */
+    height: 100vh; /* 높이를 화면 높이의 100%로 설정합니다 */
+    overflow: hidden;
+}
+
+.sec0 .txt{
+    border: 0px solid red;
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); 
+    font-family: 'JalnanGothic';
+    text-align: center;
+    color: rgb(13, 13, 86);
+    
+}
+
+.sec0 .txt h1{
+    font-size: 3rem;
+    animation: h1_ani 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes h1_ani{
+    from{transform: scale(1);}
+    to{transform: scale(1.5);}
+}
+
+.sec0 .txt h2{
+    font-size: 2rem;
+    animation: h2_ani 2s;
+    animation-fill-mode: forwards;
+} 
+
+@keyframes h2_ani{
+    from{transform: scale(1);}
+    to{transform: scale(1.3);}
+}
+
+
+
+/*1 section about */
+.sec1{width: 100%; height: 90vh; font-family: 'NPSfontBold'; }
+.sec1 > p {text-align: center; font-size: 2rem; width: 65%; margin: 30px auto;
+    background-color: #f6d9af; border-radius: 20px; padding: 10px 10px;}
+.sec1 input[id*="slide"] {display:none;}
+.sec1 .slidewrap {border: 0px solid red; max-width: 1000px; margin: 30px auto;}
+.sec1 .slidelist {border: 0px solid blue; font-size: 0; position:relative;
+    white-space:nowrap; overflow:hidden; }
+.sec1 .slidelist > li {display:inline-block; vertical-align:middle;  
+    width:100%; transition:all .5s;}
+.sec1 .slidelist > li > a {border: 0px solid blue; display:block; position:relative; height: 65vh;}
+.sec1 .slidelist > li > a img {width:100%;height: 100%;}
+.sec1 .slidelist label {position:absolute; z-index:10; 
+    top:50%; transform:translateY(-50%);
+    padding: 50px; cursor:pointer;}
+.sec1 .slidelist .textslide {position:absolute; z-index:1; 
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    line-height:1.6; text-align:center;}
+.sec1 .slidelist .textslide p {font-size:16px; font-size: 3rem; color: black;
+    opacity:0;transition:all .5s; }
+
+/* input에 체크되면 슬라이드 효과 */
+.sec1 input[id="slide0"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+.sec1 input[id="slide1"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+.sec1 input[id="slide2"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+/* input에 체크되면 텍스트 효과 */
+.sec1 input[id="slide0"]:checked ~ .slidewrap li:nth-child(1) .textslide p {opacity:1;transition-delay:.4s;}
+.sec1 input[id="slide1"]:checked ~ .slidewrap li:nth-child(2) .textslide p {opacity:1;transition-delay:.4s;}
+.sec1 input[id="slide2"]:checked ~ .slidewrap li:nth-child(3) .textslide p {opacity:1;transition-delay:.4s;}
+
+/* 좌,우 슬라이드 버튼 */
+.control > div {display:none;}
+.sec1 .left {left:30px;background:url("../img/left.png") center center / 100% no-repeat;}
+.sec1 .right {right:30px;background:url("../img/right.png") center center / 100% no-repeat;}
+.sec1 input[id="slide0"]:checked ~ .slidewrap .control > div:nth-child(1) {display:block;}
+.sec1 input[id="slide1"]:checked ~ .slidewrap .control > div:nth-child(2) {display:block;}
+.sec1 input[id="slide2"]:checked ~ .slidewrap .control > div:nth-child(3) {display:block;}
+
+/* 페이징 */
+.page {border: 0px solid blue; text-align:center; padding:10px;}
+.page > li {border: 0px solid blue;
+    display:inline-block; vertical-align:middle;}
+.page > li > label {border: 0px solid blue; display:block;
+    padding: 10px 40px; border-radius:30px;
+    background:#f6d9af; margin:15px 20px; cursor:pointer;}
+.sec1 input[id="slide0"]:checked ~ .slidewrap .page > li:nth-child(1) > label {background:#f4c26b; padding: 13px 42px;}
+.sec1 input[id="slide1"]:checked ~ .slidewrap .page > li:nth-child(2) > label {background:#f4c26b; padding: 13px 42px;}
+.sec1 input[id="slide2"]:checked ~ .slidewrap .page > li:nth-child(3) > label {background:#f4c26b; padding: 13px 42px;}
+
+
+
+/*2 section gallary */
+.sec2 {
+    width: 100%; height: 90vh;
+    margin: 0px auto;
+    padding: 0 100px;
+    display: flex; justify-content: space-between;
+    flex-direction: row; flex-wrap: wrap;
+    font-family: 'SejonghospitalBold';
+}
+
+.sec2 .title{
+    width: 100%; height: 50px;
+    border: 0px solid red;
+    margin: 30px auto;
+    text-align: center; line-height: 50px;
+    font-size: 2rem;
+    font-family: 'NPSfontBold';
+    background-color: #f6d9af;
+    border-radius: 20px; 
+    
+}
+
+.sec2 > div{
+    position: relative; top: 0; left: 0;
+    border: 0px solid red;
+    width: 18%; height: 35%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.sec2 > div:hover div{
+    top: 0;
+}
+
+.sec2 > div > div{
+    border: 0px solid yellow;
+    position: absolute; top: 80%; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.5s;
+}
+
+.sec2 > div > div > span{
+    text-indent: 15px;
+    line-height: 2;
+}
+
+.sec2 > div > div > span > h1{
+    text-indent: 20px;
+}
+
+
+
+/* section faq */
+.sec3 .title{
+    width: 53%; margin-top: 20px;
+    margin-left: 50%; transform: translateX(-50%);
+    text-align: center; padding: 10px 10px;
+    font-size: 2rem;
+    font-family: 'NPSfontBold';
+    background-color: #f6d9af;
+    border-radius: 20px;    
+}
+.faq {
+    border: 0px solid red;
+    max-width: 800px; margin: 0 auto;
+    font-family: 'NPSfontBold';
+}
+.faq .box{
+    margin-top: 30px;
+}
+
+.faq .box .question {
+    border: 1px solid #f3af31; font-size: 1.3rem;
+    display: flex; justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px; 
+    font-family: 'SejonghospitalBold';
+    border-radius: 20px 20px 0 0;
+    background-color: #f5b63f;
+}
+.faq .box .question i{
+    border: 0px solid red;
+    right: 10px; cursor: pointer; 
+}
+
+.faq .answer {
+    border: 1px solid #f3af31; 
+    font-size: 1.1rem;
+    padding: 30px 20px; 
+    display: none;
+    line-height: 2;
+    background-color: rgb(240, 214, 180);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .sec0, .sec1, .sec2{
+    display: none;
+}
+
+.sec3{
+    display: block;
+} */
+
+
+@media screen and (max-width:768px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar_icons{
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar_toogleBtn{
+        display: block;
+    }
+    .navbar_menu.active,
+    .navbar_icons.active{
+        display: flex;
+    }
+}
