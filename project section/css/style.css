@@ -133,7 +133,7 @@ a {
 .sec1 input[id*="slide"] {display:none;}
 .sec1 .slidewrap {border: 0px solid red; max-width: 1000px; margin: 30px auto;}
 .sec1 .slidelist {border: 0px solid blue; font-size: 0; position:relative;
-    white-space:nowrap; overflow:hidden; }
+    white-space:nowrap; overflow:hidden; border-radius: 30px;}
 .sec1 .slidelist > li {display:inline-block; vertical-align:middle;  
     width:100%; transition:all .5s;}
 .sec1 .slidelist > li > a {border: 0px solid blue; display:block; position:relative; height: 65vh;}
@@ -144,7 +144,8 @@ a {
 .sec1 .slidelist .textslide {position:absolute; z-index:1; 
     top:50%; left:50%; transform:translate(-50%,-50%);
     line-height:1.6; text-align:center;}
-.sec1 .slidelist .textslide p {font-size:16px; font-size: 3rem; color: black;
+    .sec1 .slidelist .textslide > h1 {font-size: 2rem; color: black;}
+.sec1 .slidelist .textslide > p { margin-top: 30px; font-size: 1.3rem; color: black;
     opacity:0;transition:all .5s; }
 
 /* input에 체크되면 슬라이드 효과 */

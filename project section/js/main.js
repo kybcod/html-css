@@ -34,7 +34,6 @@ for (var i = 0; i < questions.length; i++) {
 }
 
 const travelimgA=["img/travel0.jpg","img/travel1.jpg","img/travel2.jpg", "img/travel3.jpg","img/travel4.jpg","img/travel5.jpg","img/travel6.jpg", "img/travel7.jpg", "img/travel8.jpg"];
-const textA=["다양한 여행지","다양한 볼거리","다양한 경험"];
 
 $(function(){
     $(".navbar_menu li").on("click", function(){
@@ -44,11 +43,7 @@ $(function(){
         $(".sec").hide();
         $(".sec"+no).show();
     })
-
-    for(let i =0; i<textA.length; i++){
-        $(".textslide p:eq("+i+")").html(textA[i]);
-    }
-
+    
     for(let i = 0; i<travelimgA.length;i++){
         $(".sec2 > div:eq("+i+")").css({"background":"url("+travelimgA[i]+")",
         "backgroundSize": "100% 100%"});
